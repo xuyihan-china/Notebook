@@ -1,0 +1,131 @@
+Flex
+https://www.bilibili.com/video/BV1y441187zh
+
+常见的布局搭积木
+   
+
+第一种：水平方向的多列自适应布局
+    两列布局
+￼
+
+  缺点：右侧需要知道左侧的宽度 那么会导致样式修改复杂
+
+  第二种：中间自适应布局
+  
+￼
+设置为display：table属性 让父容器为table
+子容器为 display：table-row 都是display的属性
+这样只要设置头尾的高度 中间自动自适应布局  
+
+缺点 不能兼容 float margin无反应 absolute
+
+
+第三种：水平居中：
+ 
+display：inline-block 会限制block的发挥
+
+第四种：垂直居中：
+
+Inline-block position  transform translate 自身的50%
+￼
+
+
+布局方式：
+
+￼
+
+
+Flex 布局：
+￼
+
+都是2009年的了，到现在都不会
+￼
+
+1.轴
+
+￼
+￼
+
+
+可以用flex-direction修改默认主轴的方向。  主轴书写的方向，交叉轴 换行的方向
+￼
+Flex-wrap : 如果一行空间不够那么🈯️定换行的方向 wrap 默认从右向左  no wrap  不换行wrap reverse
+￼
+Jusitfy-content 属性控制 对齐
+主轴的对齐方式
+￼
+￼
+
+Align-items 交叉轴的对齐方式
+￼
+￼
+
+多行元素 align content
+
+￼
+￼
+
+子元素的属性：
+如何让子元素高度宽度改变时，适应屏幕大小
+
+1.宽度 
+￼
+
+1. Auto 元素内容大小为内容大小或者width 百分比 父容器的宽度
+￼
+flex-basis 	和 width同时存在的时候优先级大于width
+
+
+￼
+flex - grow 扩展
+
+￼
+空余总量为 1   0-1的比例
+
+1 沾满所有空间
+0 一点不变
+
+Flex-shrink 收缩值为0-1 之间的值
+
+￼
+会1:1:1收缩
+
+Flex-shrink ：2   会以1:2：1 的方式收缩 中间的元素收缩的 最大
+
+可以简单写为flex 一个属性 的对应值
+ 后两个可选
+
+￼
+例子：
+
+
+水平垂直居中：
+
+￼
+三行三列布局
+
+主轴方向默认从左到右 所以改变主轴方向 flex-dircion: column
+
+￼
+
+Block inline-Block inline
+
+
+Block : 是块级元素 自动占据一行
+
+Inline：行内元素  默认不能设置高和宽
+
+Inline-block : 可以设置高和宽
+
+
+* display:block
+    1. block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。
+    2. block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。
+    3. block元素可以设置margin和padding属性。
+* display:inline
+    1. inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。
+    2. inline元素设置width,height属性无效。
+    3. inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。
+* display:inline-block
+    1. 简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。
+
